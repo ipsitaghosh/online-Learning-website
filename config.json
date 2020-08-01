@@ -2,7 +2,7 @@
   "params":
   {
     "local_server": "True",
-    "gmail-id": "ipsitaghosh5050@gmail.com",
+    "gmail-id": "ipsitaghosh@gmail.com",
     "gmail-password": "983600",
     "local_uri": "mysql://root:@127.0.0.1:3307/onlinelearning",
     "prod_uri": "mysql://root:@127.0.0.1:3307/onlinelearning",
