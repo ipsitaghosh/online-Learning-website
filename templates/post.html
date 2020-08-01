@@ -1,0 +1,48 @@
+{%extends 'layout.html'%} {% block body %}{% set fname = 'img/'+post.img_file %}
+
+<!-- Page Header -->
+<header
+  class="masthead"
+  style="background-image: url({{url_for('static',filename=fname)}});"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>{{post['title']}}</h1>
+          <h2>Time to complete this course - {{post['time_required']}}</h2>
+          <span class="meta"
+            >Posted by
+            <a href="#">Admin</a>
+            on {{post['date']}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h2>What you will learn-</h2>
+        <br>
+        <p>
+         {{post['description']}}
+        </p>
+        <h2>About this course-</h2>
+        <p>{{post['about']}}</p>
+</article>
+<hr>
+<div class="clearfix" style="margin: 125px;">
+ <!-- <a class="btn btn-primary float-left" href="/"> &larr; Back </a>-->
+
+
+  <a class="btn btn-primary float-right" href="/login">Go To Course &rarr;</a>
+</div>
+
+
+{% endblock %}

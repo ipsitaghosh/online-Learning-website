@@ -1,0 +1,77 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- Page Header -->
+<header
+  class="masthead"
+  style="background-image: url(' {{ url_for('static' , filename='img/dashboard-bg1.jpg') }}')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Add Course</h1>
+          <span class="subheading">Add more to learn more </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h2>Basic Action</h2>
+
+      <a href="/view/{{name_slug}}">
+        <button class="btn btn-primary">
+          Back to your course
+        </button></a
+      >
+
+      <a href="/logout">
+        <button class="btn btn-primary">
+          LogOut
+        </button></a
+      >
+
+      <hr />
+
+      <h2>Explore other courses...</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Sno</th>
+            <th>Title</th>
+            <th>Time Required</th>
+            <th>Pay</th>
+            <th>Button to add</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for f in final%} {% for p in post%} {% if f in p.slug %}
+          <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td>
+              {{p.time_required}}
+            </td>
+            <td>Rs. {{p.fees}}</td>
+            <td>
+              <!-- <a href="/addcourse/{{p.slug}}/{{name_slug}}">-->
+              <a href="/payment/{{p.slug}}/{{name_slug}}">
+                <button class="btn btn-primary">
+                  Add to your account
+                </button></a
+              >
+            </td>
+          </tr>
+          {%endif%} {%endfor%} {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

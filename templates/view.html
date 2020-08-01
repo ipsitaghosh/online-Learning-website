@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-- Page Header -->
+<header
+  class="masthead"
+  style="background-image: url(' {{ url_for('static' , filename='img/view.jpg') }}')"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>View</h1>
+          <span class="subheading">Manage your course </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h2>Basic Action</h2>
+
+      <a href="/add/{{name_slug}}">
+        <button class="btn btn-primary">
+          Add a new course
+        </button></a
+      >
+
+      <a href="/logout">
+        <button class="btn btn-primary">
+          LogOut
+        </button></a
+      >
+
+      <hr />
+
+      <h2>View your course here...</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th>Sno</th>-->
+            <th>Name</th>
+            <th>Email</th>
+            <th>My Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for c in course%} {% for l in login%} {% if c.name_slug ==
+          l.login_slug %}
+          <tr>
+            <!--  <td>{{c.id}}</td>-->
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>
+              <a href="/post/{{c.slug}}"
+                ><button class="btn btn-primary">{{c.courses}}</button></a
+              >
+            </td>
+          </tr>
+          {%endif%} {%endfor%} {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

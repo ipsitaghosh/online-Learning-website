@@ -1,0 +1,14 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "gmail-id": "ipsitaghosh5050@gmail.com",
+    "gmail-password": "9836064530",
+    "local_uri": "mysql://root:@127.0.0.1:3307/onlinelearning",
+    "prod_uri": "mysql://root:@127.0.0.1:3307/onlinelearning",
+    "about": "The e-Learning Website assists faculty in the effective use of technologies to enhance teaching and learning. Our focus is on the good design and effective delivery of fully online courses. We provide phone support, small group training, and one-on-one consultation to help faculty learn to build appealing online courses, develop engaging online teaching methods, and to find or create appropriate media and course materials to encourage student engagement and success.",
+    "no_of_post":2,
+    "admin_user": "ipsita@ghosh",
+    "admin_password": "12345"
+  }
+}
